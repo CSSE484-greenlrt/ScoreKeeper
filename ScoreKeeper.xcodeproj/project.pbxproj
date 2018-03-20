@@ -12,6 +12,7 @@
 		9452803E2050DA37005DD118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9452803C2050DA37005DD118 /* Main.storyboard */; };
 		945280402050DA37005DD118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9452803F2050DA37005DD118 /* Assets.xcassets */; };
 		945280432050DA37005DD118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945280412050DA37005DD118 /* LaunchScreen.storyboard */; };
+		9494E272206173DC00CC4D1B /* ScoreKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9494E271206173DC00CC4D1B /* ScoreKeeperViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		9452803F2050DA37005DD118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		945280422050DA37005DD118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		945280442050DA37005DD118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9494E26F206173DB00CC4D1B /* ScoreKeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScoreKeeper-Bridging-Header.h"; sourceTree = "<group>"; };
+		9494E270206173DC00CC4D1B /* ScoreKeeperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreKeeperViewController.h; sourceTree = "<group>"; };
+		9494E271206173DC00CC4D1B /* ScoreKeeperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreKeeperViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,9 @@
 				9452803F2050DA37005DD118 /* Assets.xcassets */,
 				945280412050DA37005DD118 /* LaunchScreen.storyboard */,
 				945280442050DA37005DD118 /* Info.plist */,
+				9494E270206173DC00CC4D1B /* ScoreKeeperViewController.h */,
+				9494E271206173DC00CC4D1B /* ScoreKeeperViewController.m */,
+				9494E26F206173DB00CC4D1B /* ScoreKeeper-Bridging-Header.h */,
 			);
 			path = ScoreKeeper;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 				TargetAttributes = {
 					945280342050DA37005DD118 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +146,7 @@
 			files = (
 				9452803B2050DA37005DD118 /* ViewController.swift in Sources */,
 				945280392050DA37005DD118 /* AppDelegate.swift in Sources */,
+				9494E272206173DC00CC4D1B /* ScoreKeeperViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,11 +283,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ScoreKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.ScoreKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ScoreKeeper/ScoreKeeper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -288,11 +300,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ScoreKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.ScoreKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ScoreKeeper/ScoreKeeper-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

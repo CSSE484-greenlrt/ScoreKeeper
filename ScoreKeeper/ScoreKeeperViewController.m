@@ -16,8 +16,8 @@
 // Interface Builder Connections redacted
 int roundNumber = 1;
 int playerScores[] = {0, 0, 0, 0};
-UITextField *scoreTextFields[];
-UITextView *scoresListTextViews[];
+UITextField *scoreTextFields[4];
+UITextView *scoresListTextViews[4];
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +30,7 @@ UITextView *scoresListTextViews[];
     scoresListTextViews[1] = _player2ScoresTextView;
     scoresListTextViews[2] = _player3ScoresTextView;
     scoresListTextViews[3] = _player4ScoresTextView;
+    [self resetGame];
 }
 
 
@@ -44,7 +45,7 @@ UITextView *scoresListTextViews[];
 
 - (void) resetGame {
     roundNumber = 1;
-    self.roundLabel.text = [NSString stringWithFormat:@"%d", roundNumber];
+    self.roundLabel.text = [NSString stringWithFormat:@"Round %d", roundNumber];
     for (int i = 0; i < 4; i++) {
         playerScores[i] = 0;
         scoreTextFields[i].text = @"";
@@ -57,10 +58,12 @@ UITextView *scoresListTextViews[];
         playerScores[i] += score;
         
         if (scoresListTextViews[i].text.length > 0) {
-            scoresListTextViews[i].text = [NSString stringWithFormat:@"%@\n%d", scoresListTextViews[i].text, score];
+            scoresListTextViews[i].text = [NSString stringWithFormat:@"%@\n%d", scoresListTextViews[i].text, playerScores[i]];
         } else {
-            scoresListTextViews[i].text = [NSString stringWithFormat:@"%d", score];
+            scoresListTextViews[i].text = [NSString stringWithFormat:@"%d", playerScores[i]];
         }
+        scoresListTextViews[i].textAlignment = NSTextAlignmentCenter;
+        scoreTextFields[i].text = @"";
     }
     roundNumber += 1;
     self.roundLabel.text = [NSString stringWithFormat:@"Round %d", roundNumber];
